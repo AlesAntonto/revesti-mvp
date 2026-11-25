@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # RE:VESTI — MVP, etapa 3
 
 Prototipo web académico para simular la exploración, publicación y compra de ropa de segunda mano en Hermosillo, Sonora.
@@ -57,3 +58,6 @@ El logotipo proporcionado por el equipo está en `assets/revesti-logo.png` y apa
 - Si se acepta una propuesta para una publicación, las demás propuestas pendientes para esa misma prenda se rechazan automáticamente.
 - La opción **Reactivar publicación** permite repetir la demostración.
 - Es una simulación académica en un solo navegador: no hay cuentas, notificaciones reales, mensajería ni coordinación de entregas.
+=======
+# revesti-mvp
+>>>>>>> 56980e2dbdab37a067d6e15992e0ef5f55079ee1
