@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # RE:VESTI — MVP, etapa 3
 
 Prototipo web académico para simular la exploración, publicación y compra de ropa de segunda mano en Hermosillo, Sonora.
@@ -58,6 +57,26 @@ El logotipo proporcionado por el equipo está en `assets/revesti-logo.png` y apa
 - Si se acepta una propuesta para una publicación, las demás propuestas pendientes para esa misma prenda se rechazan automáticamente.
 - La opción **Reactivar publicación** permite repetir la demostración.
 - Es una simulación académica en un solo navegador: no hay cuentas, notificaciones reales, mensajería ni coordinación de entregas.
-=======
-# revesti-mvp
->>>>>>> 56980e2dbdab37a067d6e15992e0ef5f55079ee1
+
+
+## Etapa 5: adaptación móvil y PWA
+
+Esta versión incorpora:
+- Navegación inferior en celular: Explorar, Favoritos, Intercambios y Publicar.
+- Catálogo móvil en dos columnas, controles táctiles más cómodos y formularios adaptados.
+- Ventanas y botones ajustados a pantallas pequeñas.
+- `manifest.webmanifest` con identidad de la aplicación e iconos.
+- `sw.js` para guardar los archivos principales y permitir abrir la estructura básica sin conexión.
+- Registro del Service Worker mediante HTTPS o localhost.
+
+### Probar en computadora
+Abre el proyecto mediante un servidor local (por ejemplo, Live Server en VS Code). No abras `index.html` directamente con doble clic, porque el Service Worker requiere HTTPS o localhost.
+
+### Instalar en celular
+1. Publica el proyecto mediante GitHub Pages (HTTPS).
+2. Abre la URL publicada desde el navegador del teléfono.
+3. Android: Chrome > menú > Instalar aplicación o Añadir a pantalla de inicio.
+4. iPhone: Safari > Compartir > Añadir a pantalla de inicio.
+
+### Alcance y limitaciones
+La PWA no es una aplicación nativa ni requiere Play Store/App Store. El Service Worker almacena los archivos principales del sitio; las fotografías de demostración alojadas externamente y las fuentes de Google requieren conexión. Las publicaciones, favoritos, compras simuladas e intercambios siguen guardándose en `localStorage` de cada navegador: no se sincronizan entre dispositivos ni entre usuarios. Las fotos que se suben desde el equipo también permanecen en el almacenamiento local del navegador.

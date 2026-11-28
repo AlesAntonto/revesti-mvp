@@ -101,3 +101,106 @@
  .exchange-inbox-dialog{padding:27px 16px}
  .exchange-card-meta{flex-wrap:wrap}
 }
+
+
+/* Etapa 5: experiencia móvil y navegación tipo aplicación */
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button{touch-action:manipulation}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.mobile-nav{display:none}
+@media(max-width:620px){
+ body{padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+ .topline{font-size:9px;padding:8px 5px}
+ .header{height:58px;padding:0 13px;gap:10px}
+ .brand-logo{width:119px;max-height:39px}
+ .head-actions{margin-left:auto}
+ .head-actions .heart-nav{padding:8px 10px}
+ .head-actions .exchange-nav{display:none}
+ .head-actions #publish{display:none}
+ .hero{padding:37px 20px 29px;gap:20px;min-height:0}
+ .hero h1{font-size:clamp(39px,11vw,49px);letter-spacing:-1.2px}
+ .lead{font-size:12px;line-height:1.7;margin-bottom:18px}
+ .hero-visual{height:235px;width:88%}
+ .sticker{width:69px;height:69px;font-size:8px;left:-15px}
+ .float-card{right:-7px;bottom:29px;padding:10px 12px;font-size:9px}
+ .benefits{font-size:9px;gap:11px}
+ .catalog{padding:39px 15px 43px}
+ .section-title h2{font-size:35px}
+ .section-title .muted{font-size:10px}
+ .toolbar{padding:12px 0;margin-bottom:16px}
+ .search{min-height:39px;border:1px solid var(--line);padding:0 10px;margin-bottom:10px}
+ .search input{font-size:12px;min-height:38px}
+ .sort{font-size:10px}
+ .sort select{font-size:11px;padding:9px;max-width:62%}
+ .filters{margin-bottom:15px}
+ .filter-head{margin-bottom:10px}
+ .filters h4{font-size:10px}
+ .categories{gap:6px;padding:2px 1px 8px;scrollbar-width:thin}
+ .categories button{font-size:10px;min-height:35px;flex:0 0 auto}
+ .filters select{font-size:11px;min-height:37px}
+ .price-head h4{font-size:10px}
+ .filters input[type=range]{min-height:25px}
+ .check{font-size:10px;min-height:28px}
+ .check input{width:17px;height:17px;accent-color:var(--accent)}
+ .result-row{font-size:10px;margin:12px 0}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 10px}
+ .photo{aspect-ratio:.76}
+ .badge,.swap-badge{font-size:7px;padding:5px 6px}
+ .heart{width:32px;height:32px;font-size:18px}
+ .meta{font-size:7px;margin:8px 0 5px;gap:4px}
+ .card h3{font-size:10px;white-space:normal;line-height:1.35;min-height:27px}
+ .price{font-size:11px}
+ .size-label{font-size:8px}
+ .view{min-height:36px;font-size:9px;padding:9px 5px}
+ .how{padding:44px 0}
+ .center h2{font-size:34px}
+ .steps{gap:9px}
+ .steps article{padding:19px;min-height:0}
+ .closing{margin:30px 15px;padding:23px 18px}
+ .closing h2{font-size:27px;line-height:1.15}
+ footer{padding:18px 15px;gap:10px}
+ footer .brand-logo{width:110px}
+ footer p{font-size:9px}
+ .mobile-nav{
+  display:grid;grid-template-columns:repeat(4,1fr);align-items:center;
+  position:fixed;z-index:25;left:0;right:0;bottom:0;
+  min-height:62px;padding:5px 8px calc(5px + env(safe-area-inset-bottom));
+  background:#fffdf9f5;border-top:1px solid var(--line);
+  box-shadow:0 -7px 24px #33291f12;backdrop-filter:blur(12px)
+ }
+ .mobile-nav-item{position:relative;border:0;background:transparent;color:#8a7b6c;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  min-height:49px;padding:3px 1px;font-size:20px}
+ .mobile-nav-item small{font-size:9px;font-weight:600}
+ .mobile-nav-item.active{color:var(--brown)}
+ .mobile-nav-item b{position:absolute;top:0;right:calc(50% - 22px);min-width:15px;height:15px;
+  border-radius:20px;background:var(--accent);color:white;font-size:8px;line-height:15px}
+ .mobile-nav-item.publish-tab>span{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;
+  background:var(--brown);color:white;font-size:19px}
+ .mobile-nav-item.publish-tab small{margin-top:1px}
+ .backdrop{padding:10px;align-items:end}
+ .modal{width:100%;max-width:480px;max-height:calc(100dvh - 20px);border-radius:10px 10px 0 0;overflow:auto}
+ .modal>img{height:190px}
+ .modal-info{padding:19px 18px 22px}
+ .modal-info h2{font-size:23px}
+ .modal-buttons{display:grid;grid-template-columns:1fr 1fr}
+ .modal-buttons .btn{min-height:42px;font-size:10px}
+ .publish-dialog{width:100%;max-height:calc(100dvh - 16px);border-radius:10px 10px 0 0;padding:25px 17px calc(20px + env(safe-area-inset-bottom))}
+ .publish-heading h2{font-size:34px}
+ .form-field{font-size:11px}
+ .form-field input,.form-field select,.form-field textarea{font-size:16px;min-height:44px;padding:11px}
+ .form-field textarea{min-height:95px}
+ .publish-actions{grid-template-columns:1fr}
+ .publish-actions .btn{min-height:44px;font-size:11px}
+ .purchase-dialog,.exchange-dialog,.exchange-inbox-dialog{width:100%}
+ .toast{bottom:calc(75px + env(safe-area-inset-bottom));font-size:11px}
+}
+@media(min-width:621px) and (max-width:850px){
+ .header{padding:0 3vw}
+ .header nav{gap:15px}
+ .head-actions{gap:7px}
+ .head-actions .btn{padding:11px 12px}
+ .catalog-layout{grid-template-columns:145px minmax(0,1fr);gap:16px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

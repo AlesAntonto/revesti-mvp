@@ -2,7 +2,10 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f6f0e6">
+<meta name="theme-color" content="#493629">
+<meta name="description" content="Explora, publica, compra e intercambia prendas de segunda mano en RE:VESTI.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
 <title>RE:VESTI | Una segunda vida para tu estilo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -65,6 +68,12 @@
 <section class="closing wrap"><div><p class="eyebrow">MENOS DESPERDICIO, MÁS ESTILO</p><h2>Lo que ya no usas puede ser<br><em>lo que alguien busca.</em></h2></div><button class="btn light" id="publish-bottom">Quiero publicar ↗</button></section>
 </main>
 <footer><a class="logo" href="#" aria-label="RE:VESTI, inicio"><img class="brand-logo" src="assets/revesti-logo.png" alt="RE:VESTI"></a><p>Una segunda vida para la ropa.<small>Prototipo académico · Hermosillo, Sonora</small></p><small>© 2026 RE:VESTI · MVP</small></footer>
+<nav class="mobile-nav" aria-label="Navegación principal">
+ <button type="button" class="mobile-nav-item active" id="mobile-explore" aria-label="Explorar prendas"><span aria-hidden="true">⌕</span><small>Explorar</small></button>
+ <button type="button" class="mobile-nav-item" id="mobile-favs" aria-label="Ver favoritos"><span aria-hidden="true">♡</span><small>Favoritos</small><b id="mobile-fav-count">0</b></button>
+ <button type="button" class="mobile-nav-item" id="mobile-exchanges" aria-label="Ver intercambios"><span aria-hidden="true">↻</span><small>Intercambios</small><b id="mobile-exchange-count">0</b></button>
+ <button type="button" class="mobile-nav-item publish-tab" id="mobile-publish" aria-label="Publicar una prenda"><span aria-hidden="true">＋</span><small>Publicar</small></button>
+</nav>
 <div class="backdrop hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-name">
  <div class="modal"><button class="close" id="close" aria-label="Cerrar">×</button><img id="modal-img" alt=""><div class="modal-info"><p class="eyebrow" id="modal-cat"></p><h2 id="modal-name"></h2><strong class="modal-price" id="modal-price"></strong><div class="tags" id="modal-tags"></div><p id="modal-desc"></p><div class="seller"><span id="seller-initial"></span><div><b id="seller-name"></b><small>Usuario de RE:VESTI · Hermosillo</small></div></div><p class="availability-note" id="modal-availability"></p><div class="modal-buttons"><button class="btn dark" id="interest">Simular compra ↗</button><button class="btn outline hidden" id="propose-exchange">Proponer intercambio ↻</button><button class="btn dark hidden" id="reactivate">Reactivar publicación ↻</button><button class="btn outline" id="modal-fav">♡ Guardar</button></div><small class="disclaimer">Simulación académica: no se procesa ningún pago ni se realiza contacto real.</small></div></div>
 </div>

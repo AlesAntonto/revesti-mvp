@@ -36,6 +36,8 @@ function updateExchangeCount() {
   const count = getExchangeProposals().filter(record => record.status === "pending").length;
   const badge = $("#exchange-count");
   if (badge) badge.textContent = count;
+  const mobileBadge = $("#mobile-exchange-count");
+  if (mobileBadge) mobileBadge.textContent = count;
 }
 function getUserProducts() { return readArray(USER_PRODUCTS_KEY); }
 function getAllProducts() { return [...getUserProducts().slice().reverse(), ...products]; }
@@ -106,6 +108,7 @@ function render() {
   $("#grid").classList.toggle("hidden", !list.length);
   $("#empty").classList.toggle("hidden", !!list.length);
   $("#fav-count").textContent = favs.length;
+  if ($("#mobile-fav-count")) $("#mobile-fav-count").textContent = favs.length;
   $("#fav-filter").textContent = state.favs ? "♡ Ver catálogo" : "♡ Ver favoritos";
   updateExchangeCount();
 }
@@ -578,3 +581,41 @@ document.addEventListener("keydown", event => {
 
 updatePriceRequirement();
 render();
+
+
+// Navegación inferior optimizada para celulares.
+function setMobileNavActive(activeId) {
+  document.querySelectorAll(".mobile-nav-item").forEach(button => {
+    button.classList.toggle("active", button.id === activeId);
+  });
+}
+$("#mobile-explore").addEventListener("click", () => {
+  state.favs = false;
+  render();
+  setMobileNavActive("mobile-explore");
+  $("#catalogo").scrollIntoView({behavior:"smooth", block:"start"});
+});
+$("#mobile-favs").addEventListener("click", () => {
+  state.favs = true;
+  render();
+  setMobileNavActive("mobile-favs");
+  $("#catalogo").scrollIntoView({behavior:"smooth", block:"start"});
+});
+$("#mobile-exchanges").addEventListener("click", () => {
+  setMobileNavActive("mobile-exchanges");
+  openExchangeInbox();
+});
+$("#mobile-publish").addEventListener("click", () => {
+  setMobileNavActive("mobile-publish");
+  openPublishModal();
+});
+$("#mobile-explore").setAttribute("aria-current", "page");
+
+// Mantener la PWA actualizada y permitir la carga básica sin conexión.
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(error => {
+      console.warn("No se pudo registrar el modo sin conexión:", error);
+    });
+  });
+}
